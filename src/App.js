@@ -1,5 +1,5 @@
 import './App.css';
-// API Key-- b39f2195aa3a453aa39da859b3a5c32c
+
 import React, { Component } from 'react'
 import News from './components/News';
 import NavBar from './components/NavBar';
