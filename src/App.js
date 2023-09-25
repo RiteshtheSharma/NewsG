@@ -7,12 +7,15 @@ import { Routes, Route,BrowserRouter } from "react-router-dom";
 import LinearProgress from '@mui/material/LinearProgress';
 import Box from '@mui/material/Box';
 import RoutingError from './components/RoutingError'
+import About from './components/About';
+import RedirectPage from './components/RedirectPage';
 export default class App extends Component {
  
 //key parameter required for same components of diff paramter val
 constructor(){
   super()
   this.apiKey = process.env.REACT_APP_NEWS_API
+  this.site_github_repo_link = process.env.REACT_APP_SITE_GITHUB_REPO_LINK
   this.state={
     progress :0,
     LinearProgressFlag:true,
@@ -89,7 +92,14 @@ setProgress=(Prog)=>{
            <Route
              path ='/about'
             element={
-              <div>about</div>
+              <About setProgress={this.setProgress}/>
+            }
+          />
+           <Route
+             path ='/site_git_repo_link'
+            
+            element={
+              <RedirectPage site_github_repo_link ={ `https://github.com/${this.site_github_repo_link}` } />
             }
           />
            <Route
