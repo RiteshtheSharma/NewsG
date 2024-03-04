@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types'
+
 import React, { Component } from 'react'
 import LoadingComponent from './LoadingComponent';
-import { Box,Grid,Stack,Typography } from '@mui/material';
+import { Box,Stack,Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 export default class About extends Component {
 //   static propTypes = {second: third}

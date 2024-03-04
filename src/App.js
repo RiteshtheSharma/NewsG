@@ -5,7 +5,6 @@ import News from './components/News';
 import NavBar from './components/NavBar';
 import { Routes, Route,BrowserRouter } from "react-router-dom";
 import LinearProgress from '@mui/material/LinearProgress';
-import Box from '@mui/material/Box';
 import RoutingError from './components/RoutingError'
 import About from './components/About';
 import RedirectPage from './components/RedirectPage';
