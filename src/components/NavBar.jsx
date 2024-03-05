@@ -33,8 +33,10 @@ constructor(props){
       </Typography>
       <Divider />
       <List>
-        {this.props.pages.map((item,index) => (
-          <Link to={`/NewsG/${item}`} style={{color:'black' ,textDecoration:'none'}} key={index}>
+        {this.props.pages.map((item,index) => {let relativeLink = `/NewsG/${item ==='home'?'':item}`;
+          console.log(relativeLink);
+
+          return (<Link to={relativeLink} style={{color:'black' ,textDecoration:'none'}} key={relativeLink}>
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: 'left' }}>
             
@@ -42,8 +44,9 @@ constructor(props){
                
               
             </ListItemButton>
-          </ListItem></Link>
-        ))}
+          </ListItem></Link>)
+
+        })}
       </List>
     </Box>
     )
@@ -115,7 +118,7 @@ export default class NavBar extends Component {
 
             }}
           >
-          <Link style={{color:'white' ,textDecoration:'none'}} to=""  >NewsG+</Link> 
+          <Link style={{color:'white' ,textDecoration:'none'}} to="/NewsG"  >NewsG+</Link> 
            
           </Typography>
 
@@ -125,7 +128,7 @@ export default class NavBar extends Component {
           <Box  spacing={1} sx={{ display: { xs: 'none', md: 'flex' } , justifyContent: "space-around",flexWrap:{md:'nowrap',sm:'wrap'}}}>
             {this.pages.map((item,index) => (
               <Button key={index} sx={{ color: '#fff' ,fontSize:{lg:'0.875rem',sm:'0.78rem'} ,fontWeight:{lg:'500',sm:'bolder'}}} >
-              <Link to={index===0?'':item}  style={{color:'white' ,textDecoration:'none'}}>
+              <Link to={index===0?'/NewsG':`/NewsG/${item}`}  style={{color:'white' ,textDecoration:'none'}}>
                 {item}
                 </Link>
               </Button>
@@ -142,7 +145,7 @@ export default class NavBar extends Component {
             {this.pages.map((item,index) => (
               <Grid  item  xs={3} key={index}>
               <Button key={item} sx={{ color: '#fff'  }} >
-              <Link to={index===0?'':item}  style={{color:'white' ,textDecoration:'none'}}>
+              <Link to={index===0?'/NewsG':`/NewsG/${item}`}  style={{color:'white' ,textDecoration:'none'}}>
                 {item}
                 </Link>
               </Button></Grid>
