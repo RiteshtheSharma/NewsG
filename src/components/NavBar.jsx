@@ -129,7 +129,8 @@ export default class NavBar extends Component {
             {this.pages.map((item,index) => (
               <Button key={index} sx={{ color: '#fff' ,fontSize:{lg:'0.875rem',sm:'0.78rem'} ,fontWeight:{lg:'500',sm:'bolder'}}} >
               <Link to={index===0?'/NewsG':`/NewsG/${item}`}  style={{color:'white' ,textDecoration:'none'}}>
-                {item}
+                {item
+                }
                 </Link>
               </Button>
             ))}
