@@ -21,7 +21,7 @@ export class News extends Component {
   }
   constructor(props){//runs first 
     super(props);
-   console.log('news constructed ')
+  //  console.log('news constructed ')
     this.state={
       articles:[],
       loading:true,
@@ -70,7 +70,7 @@ console.log(e)
   }
 
 async componentDidMount(){//runs after rendering through render()
-  console.log(this.state.page+' did  '+this.state.totalResults)
+  // console.log(this.state.page+' did  '+this.state.totalResults)
   if(this.state.page === 0){
     this.update_News()
     this.setState({page:this.state.page+1})

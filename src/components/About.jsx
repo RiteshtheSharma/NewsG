@@ -7,7 +7,7 @@ export default class About extends Component {
 //   static propTypes = {second: third}
 constructor(props){//runs first 
     super(props);
-   console.log('about  constructed ')
+   
     this.state={
 
       loading:true,
@@ -20,7 +20,7 @@ constructor(props){//runs first
     const timer = setTimeout(() => {
         this.props.setProgress(60)
         this.setState({loading:false,})
-        console.log('executed')
+        
         this.props.setProgress(100)
       }, 1000);
       
