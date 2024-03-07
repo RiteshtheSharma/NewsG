@@ -38,49 +38,49 @@ setProgress=(Prog)=>{
       <Routes>
       
       <Route
-             path='/NewsG/'
+             path='/'
             element={
               <News key="general" pageSize={5} category={'general'} country={this.state.country}  apiKey={this.apiKey} setProgress={this.setProgress}/>
             }
           />
           <Route
-             path='/NewsG/business'
+             path='/business'
             element={
               <News key="/business" pageSize={5} category={'business'} country={this.state.country}  apiKey={this.apiKey} setProgress={this.setProgress}/>
             }
           />
             <Route
-             path='/NewsG/general'
+             path='/general'
             element={
               <News key='/general' pageSize={5} category={'general'} country={this.state.country}  apiKey={this.apiKey} setProgress={this.setProgress}/>
             }
           />
           <Route
-             path='/NewsG/sports'
+             path='/sports'
             element={
               <News key='/sports' pageSize={5} category={'sports'} country={this.state.country} apiKey={this.apiKey} setProgress={this.setProgress}/>
             }
           />
           <Route
-             path='/NewsG/technology'
+             path='/technology'
             element={
               <News key='/technology' pageSize={5} category={'technology'} country={this.state.country} apiKey={this.apiKey} setProgress={this.setProgress}/>
             }
           />
           <Route
-             path='/NewsG/health'
+             path='/health'
             element={
               <News key="/health" pageSize={5} category={'health'} country={this.state.country} apiKey={this.apiKey} setProgress={this.setProgress}/>
             }
           />
           <Route
-             path='/NewsG/entertainment'
+             path='/entertainment'
             element={
               <News key='/entertainment' pageSize={5} category={'entertainment'} apiKey={this.apiKey } country={this.state.country} setProgress={this.setProgress}/>
             }
           />
           <Route
-             path='/NewsG/science'
+             path='/science'
             element={
               <News key='/science' pageSize={5} category={'science'} country={this.state.country} apiKey={this.apiKey} setProgress={this.setProgress}/>
             }
@@ -89,13 +89,13 @@ setProgress=(Prog)=>{
               
               
            <Route
-             path ='/NewsG/about'
+             path ='/about'
             element={
               <About setProgress={this.setProgress}/>
             }
           />
            <Route
-             path ='/NewsG/site_git_repo_link'
+             path ='/site_git_repo_link'
             
             element={
               <RedirectPage site_github_repo_link ={ `https://github.com/${this.site_github_repo_link}` } />

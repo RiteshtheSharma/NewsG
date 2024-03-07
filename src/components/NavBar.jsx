@@ -34,7 +34,7 @@ constructor(props){
       <Divider />
       <List>
         {this.props.pages.map((item,index) => (
-          <Link to={`/NewsG/${item}`} style={{color:'black' ,textDecoration:'none'}} key={index}>
+          <Link to={`/${item}`} style={{color:'black' ,textDecoration:'none'}} key={index}>
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: 'left' }}>
             
