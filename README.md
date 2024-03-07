@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# NewsG 🗞
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+News App is a simple news app 🗞️ which uses [NewsAPI](https://newsapi.org/) to fetch top news headlines from the API. The main aim of this app is to be a leading example of how to build Modern React applications using Material UI
 
-## Available Scripts
+The idea is to keep the app super simple while demonstrating new libraries and tools which makes it easier to build high quality React applications.
 
-In the project directory, you can run:
 
-### `npm start`
+# Development Setup 🖥
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Prerequisites 
+- Node.js and npm
+- Code Editor: VsCode, Sublime Text or Atom
+## development environment customization 
+### tools and extensions 
+- Prettier
+- ESLint
+- Javascript (ES6) code snippet
+- ES7+ React/Redux/React-Native snippets
+- React Developer Tools
+- eslint
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## API key 🔑
+You'll need to provide API key to fetch the news from the News Service (API). Currently the news is fetched from [NewsAPI](https://newsapi.org/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Generate an API key (It's only 2 steps!) from [NewsAPI](https://newsapi.org/)
+- Create new file named -> `.env` in our project root folder
+- Add the API key as shown below [Make sure to keep the double quotes]:
+```
+    REACT_APP_NEWS_API=<INSERT_YOUR_API_KEY>
+```
+- npm run start ( To run app locally )
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Libraries and tools 🛠
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+NewsG uses libraries and tools used to build Modern React application
 
-### `npm run eject`
+- [React](https://react.dev/) Javascript library to create Single page application with components
+- [React Router](https://reactrouter.com/en/main) Client side routing
+- [MUI](https://mui.com/) Provide components for creating UI
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Architecture
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### URL 
+This app has many web pages which are ofcourse render as a single page app must. Following briefly describes the relative urls for each web page 
+```
+  - /                    : General headlines of newsapi (Home) 
+  - /about               : About the app
+  - /business            : Business headlines of newsapi 
+  - /general             : same as / 
+  - /sports              : Sports headlines of newsapi 
+  - /technology          : Technology headlines of newsapi 
+  - /health              : health headlines of newsapi 
+  - /entertainment       : entertainment related headlines of newsapi 
+  - /science             : science related headlines of newsapi 
+  - /site_git_repo_link  : Redirect to my github repository for this project   
+  ```
 
-## Learn More
+### Components  
+Below is tree structure representation of how the components compose the complete Single page app 
+- Main Components (Components of App.jsx )
+   - Navbar 
+   - News, About, RedirectPage, RoutingError  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- NavBar :  
+  components
+  - DRawer :
+       It it is only used for mobile resolution to ensure that web app is adaptable for each type of device 
+        Props
+           - pages : array of strings for navigation item names 
+           - handleDrawerToggle : function to toggle Navigation Drawer for each click on hamburger icon
+           
+- News : 
+  This component is used to display the headlines with link about different newses according to different categories which can be picked up using the navbar items. It uses infinite scroll to load more news headlines. 
+  Props : 
+    - pageSize    : No of headlines to be fetched by newsapi at each vertical scroll 
+    - category    : category of headlines 
+    - country     : country code whose news user in which the site is running 
+    - apiKey      : your newsapi key 
+    - setProgress : tells how much the content is loaded [0-100]  
+  Components : 
+     - NewsItems : headline in form of Card component   
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- About : 
+   This component briefly tells about the app, its creator and how to contribute in this app. 
 
-### Code Splitting
+- RedirectPage : Component which informs user about website 's redirection to different website and simultaneously redirects to different page  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- RoutingError : If user tries to acess any other page other than available pages in this website then this component will appear to inform user about absence of that url 
