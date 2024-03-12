@@ -4,7 +4,9 @@ News App is a simple news app 🗞️ which uses [NewsAPI](https://newsapi.org/)
 
 The idea is to keep the app super simple while demonstrating new libraries and tools which makes it easier to build high quality React applications.
 
+# Video demo 
 
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://media.githubusercontent.com/media/RiteshtheSharma/NewsG/master/recording-2024-03-07-22-16-09.webm)
 
 # Development Setup 🖥
 
